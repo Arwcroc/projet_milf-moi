@@ -6,6 +6,7 @@ import RefreshIcon from '@mui/icons-material/Refresh';
 
 const TopSection = (props) => {
 	const [iconFontSize, setIconFontSize] = useState(undefined);
+	const [iconColor, setIconColor] = useState("action");
 	return (
 		<Box className="App__profileContainer__topSection"
 		sx={{
@@ -17,9 +18,16 @@ const TopSection = (props) => {
 		>
 			<Box className="App__profileContainer__topSection__refreshButton">
 				<RefreshIcon 
-					onMouseOver={() => setIconFontSize("large")}
-					onMouseLeave={() => setIconFontSize("medium")}
+					onMouseOver={() => {
+						setIconFontSize("large")
+						setIconColor("primary")
+					}}
+					onMouseLeave={() => {
+						setIconFontSize("medium")
+						setIconColor("action")
+					}}
 					fontSize={iconFontSize}
+					color={iconColor}
 					onClick={props.onRefreshClick}
 				/>
 			</Box>
