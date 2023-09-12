@@ -20,7 +20,7 @@ const ProfileContainer = () => {
 	useEffect(() => {
 		if (userData !== undefined) return;
 		RefreshClick();
-	}, [])
+	}, [userData])
 
 	return (
 		<Paper className="App__profileContainer"
