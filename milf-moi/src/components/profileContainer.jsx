@@ -8,14 +8,20 @@ import BottomSection from "./bottomSection.jsx";
 
 const ProfileContainer = () => {
 	const [userData, setUserData] = useState(undefined);
-	useEffect(() => {
-		if (userData !== undefined) return;
+
+	const RefreshClick = () => {
+		setUserData(undefined);
 		fetch("https://randomuser.me/api/").then( async (response) => {
 			if (response.status < 200 || response.status >= 400) return;
 			let body = await response.json();
 			setUserData(body.results[0]);
 		})
+	}
+	useEffect(() => {
+		if (userData !== undefined) return;
+		RefreshClick();
 	}, [])
+
 	return (
 		<Paper className="App__profileContainer"
 		elevation={22}
@@ -27,7 +33,7 @@ const ProfileContainer = () => {
 		{
 			userData ? (
 				<>
-					<TopSection userData={userData} />
+					<TopSection userData={userData} onRefreshClick={RefreshClick}/>
 					<BottomSection userData={userData} />
 				</>
 			): (
