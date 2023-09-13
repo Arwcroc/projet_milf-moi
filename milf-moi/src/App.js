@@ -14,8 +14,9 @@ function App() {
 		<Routes>
 			<Route path="/" element={
 				<>
-				<a href="https://google.fr">Google</a>
-				<Link to="/profile">Profile</Link>
+					<a href= "https://google.fr" target="_blank" rel="noreferrer">Google</a>
+					<Link to="/profile">Profile</Link>
+					<a href= "https://www.youtube.com/watch?v=dQw4w9WgXcQ">Safe Zone</a>
 				</>
 			}/>
 			<Route path="/profile" element={

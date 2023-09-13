@@ -33,6 +33,11 @@ code {
 	position: relative;
 }
 
+.App__profileContainer__topSection__menuButton {
+	display:flex;
+	margin-left: auto;
+}
+
 .App__profileContainer__topSection__refreshButton {
 	display:flex;
 	margin-left: auto;
