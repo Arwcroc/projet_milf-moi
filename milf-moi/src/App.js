@@ -2,11 +2,23 @@ import React from "react";
 import './App.css';
 import "./components/profileContainer.jsx"
 import ProfileContainer from "./components/profileContainer.jsx";
+import {
+	Link,
+	Route,
+	Routes,
+} from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-		<ProfileContainer></ProfileContainer>
+		<Routes>
+			<Route path="/" element={
+				<a href="https://google.fr">Profile</a>
+			}/>
+			<Route path="/profile" element={
+				<ProfileContainer/>
+			}/>
+		</Routes>
     </div>
   );
 }

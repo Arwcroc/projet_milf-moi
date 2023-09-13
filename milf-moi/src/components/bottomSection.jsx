@@ -26,8 +26,8 @@ const BottomSection = (props) => {
 		{
 			id: "birthday",
 			comp: CakeIcon,
-			topText: "My birthday is",
-			bottomText: props.userData.dob.date
+			topText: "I am",
+			bottomText: props.userData.dob.age + " years old"
 		},
 		{
 			id: "postal address",
