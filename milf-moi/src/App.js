@@ -13,7 +13,10 @@ function App() {
     <div className="App">
 		<Routes>
 			<Route path="/" element={
-				<a href="https://google.fr">Profile</a>
+				<>
+				<a href="https://google.fr">Google</a>
+				<Link to="/profile">Profile</Link>
+				</>
 			}/>
 			<Route path="/profile" element={
 				<ProfileContainer/>
